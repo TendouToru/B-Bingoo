@@ -1,0 +1,122 @@
+/* Grundlayout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgba(39, 55, 81, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 41, 59, 0.95);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  text-align: center;
+}
+
+.overlay-content {
+  padding: 2rem;
+  background-color: #1e293b;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#startButton {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#startButton:hover {
+  background-color: #0050fc;
+}
+
+/* Bingo Board */
+.bingo-board {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(60px, 1fr));
+  grid-gap: 0.5rem;
+  margin-top: 2rem;
+  max-width: 500px;
+  width: 100%;
+}
+
+.bingo-cell {
+  background-color: white;
+  border: 2px solid #cbd5e1;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+  word-wrap: break-word;
+}
+
+.bingo-cell:hover {
+  background-color: #0099ff;
+}
+
+.bingo-cell.marked {
+  background-color: #86efac;
+  color: #064e3b;
+  font-weight: bold;
+  border-color: #4ade80;
+}
+
+.bingo-cell.free {
+  background-color: #facc15;
+  color: #78350f;
+  font-weight: bold;
+}
+
+/* Gewinnnachricht */
+.win-message {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #10b981;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .bingo-cell {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .overlay-content h1 {
+    font-size: 1.5rem;
+  }
+
+  #startButton {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
